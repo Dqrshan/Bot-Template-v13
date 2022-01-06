@@ -1,5 +1,5 @@
-const Event = require("../../Ana/Event")
+const Event = require("../../Client/Event");
 
-module.exports = new Event("ready",async(bot)=>{
-    console.log(`${bot.user.username} is ready!`)
-})
+module.exports = new Event("ready", async (client) => {
+	console.log(`[✨] ${client.user.username} online`);
+});

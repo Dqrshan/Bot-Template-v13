@@ -1,15 +1,14 @@
 /** @format */
 
 const Discord = require("discord.js");
-
-const AnaClient = require("./Ana.Client.js");
+const Bot = require("./Bot.js");
 
 /**
  * @template {keyof Discord.ClientEvents} K
- * @param {AnaClient} bot
+ * @param {Bot} client
  * @param {Discord.ClientEvents[K]} eventArgs
  */
-function RunFunction(bot, ...eventArgs) {}
+function RunFunction(client, ...eventArgs) {}
 
 /**
  * @template {keyof Discord.ClientEvents} K

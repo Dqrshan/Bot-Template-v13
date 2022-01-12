@@ -1,6 +1,4 @@
-const ms = require("ms")
+const Bot = require("./Client/Bot"),
+      client = new Bot()
 
-const AnaClient = require("./Ana/Ana.Client")
-bot = new AnaClient()
-
-bot.start(bot.config.token)
+client.start(client.config.token)

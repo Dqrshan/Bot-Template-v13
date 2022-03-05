@@ -1,0 +1,28 @@
+{
+  "name": "discord.js-framework",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">🎉 Discord Bot Template | djs v13 🎉</h1>",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dqrshan/bot-template-discord.js-v13.git"
+  },
+  "keywords": [
+    "discord.js",
+    "bot",
+    "framework",
+    "template"
+  ],
+  "author": "Lorenz#1337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dqrshan/bot-template-discord.js-v13/issues"
+  },
+  "homepage": "https://github.com/Dqrshan/bot-template-discord.js-v13#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}

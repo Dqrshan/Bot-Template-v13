@@ -13,19 +13,19 @@ module.exports = new Event("messageCreate", async (client, message) => {
 	const command =
 		client.commands.get(cmd) ||
 		client.commands.find((c) => c.aliases && c.aliases.includes(cmd));
-	if (!command) return message.reply(`\`${cmd}\` is not a valid command!`);
+	if (!command) return;
 
 	try {
 		if (command.permissions && Array.isArray(command.permissions)) {
-			command.permissions.forEach((perm) => {
-				if (
-					!message.member.permissions.has(perm) ||
-					!message.channel.permissionsFor(message.author.id).has(perm)
-				) {
-					message.reply(`Missing \`${perm}\` Permission`);
-					return;
-				}
-			});
+			if (
+				!message.member.permissions.has(command.permissions) &&
+				!message.channel.permissionsFor(message.author.id).has(perm)
+			) {
+				message.reply(
+					`Missing \`${command.permissions.join(", ")}\` Permission`
+				);
+				return;
+			}
 		}
 		/* Executing command */
 		await command.execute(client, message, args);

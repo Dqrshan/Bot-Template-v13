@@ -1,7 +1,9 @@
 const Discord = require("discord.js"),
 	fs = require("fs"),
 	config = require("../config"),
-	Event = require("./Event");
+	Event = require("./Event"),
+	{ REST } = require("@discordjs/rest"),
+	{ Routes } = require("discord-api-types/v9");
 
 class Bot extends Discord.Client {
 	constructor() {
@@ -15,6 +17,7 @@ class Bot extends Discord.Client {
 	start(token) {
 		if (!token) return console.error(`[ERROR]: Invalid/No Token Provided`);
 		this.initCommands();
+		// this.initInteractions(); // Moved to `ready.js`
 		this.initEvents();
 		this.login(token);
 	}
@@ -57,38 +60,35 @@ class Bot extends Discord.Client {
 		console.log(`[events]: ${counter}`);
 	}
 
-	async initInteractions() {
+	async initInteractions(guild) {
 		let counter = 0;
+		let commands = [];
 		const subFolder = fs.readdirSync("./src/commands");
 		for (const category of subFolder) {
 			const commandsFiles = fs.readdirSync(`./src/commands/${category}`);
 			for (const commandFile of commandsFiles) {
 				const command = require(`../commands/${category}/${commandFile}`);
 
-				if (command.exec && typeof command.exec === "function") {
+				if (command.exec) {
 					this.interactions.set(command.name, command);
+					commands.push(this.build(command));
 				}
 				counter++;
 			}
 		}
-		console.log(`[commands]: ${counter}`);
-	}
+		console.log(`[interactions]: ${counter}`);
+		const rest = new REST({ version: "9" }).setToken(process.env.token);
 
-	async register(guild) {
-		const commands = this.interactions.map((cmd) => this.build(cmd));
-		if (guild) {
-			this.application?.commands
-				.set(
-					commands,
-					guild instanceof Discord.Guild
-						? guild.id
-						: guild instanceof String
-						? guild
-						: null
-				)
-				.catch((e) => console.error(e));
-		} else {
-			this.application?.commands.set(commands).catch((e) => console.error(e));
+		try {
+			console.log("Started refreshing application (/) commands.");
+
+			await rest.put(Routes.applicationGuildCommands(this.user.id, guild.id), {
+				body: commands,
+			});
+
+			console.log("Successfully reloaded application (/) commands.");
+		} catch (error) {
+			console.error(error);
 		}
 	}
 
@@ -97,6 +97,7 @@ class Bot extends Discord.Client {
 			name: command.name,
 			description: command.description,
 			options: command.slashOptions,
+			defaultPermissions: true,
 		};
 	}
 }

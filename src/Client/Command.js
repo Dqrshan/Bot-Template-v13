@@ -1,11 +1,25 @@
 const Discord = require("discord.js"),
-	Bot = require("./Bot");
+	Bot = require("./Bot"),
+	Slash = Discord.ApplicationCommand.prototype.options;
 /**
+ * @abstract
  * @param {Bot} client
  * @param {Discord.Message} message
  * @param {String[]} args
+ * @returns {Promise<Discord.Message>}
+ * Run method for the message command
  */
 function RunFunction(client, message, args) {}
+
+/**
+ * @abstract
+ * @param {Bot} client
+ * @param {Discord.CommandInteraction} interaction
+ * @returns {Promise<Discord.CommandInteraction>}
+ * Run method for the slash command interaction
+ */
+function ExecFunction(client, interaction) {}
+
 class Command {
 	/**
 	 * @typedef {{
@@ -13,9 +27,12 @@ class Command {
 	 *      description:string,
 	 *      category: string,
 	 *      aliases: array,
-	 *      permissions: array,
+	 *      permissions: import("discord.js").PermissionResolvable,
 	 *      usage: string,
-	 *      run: RunFunction}} CommandOptions
+	 * 		slashOptions: Slash,
+	 *      run: RunFunction,
+	 * 		exec: ExecFunction
+	 * }} CommandOptions
 	 * @param {CommandOptions} options
 	 */
 	constructor(options) {
@@ -25,8 +42,24 @@ class Command {
 		this.aliases = options.aliases;
 		this.permissions = options.permissions;
 		this.usage = options.usage;
+		this.slashOptions = options.slashOptions;
 
 		this.run = options.run;
+	}
+
+	static get types() {
+		return {
+			SUB_COMMAND: 1,
+			SUB_COMMAND_GROUP: 2,
+			STRING: 3,
+			INTEGER: 4,
+			BOOLEAN: 5,
+			USER: 6,
+			CHANNEL: 7,
+			ROLE: 8,
+			MENTIONABLE: 9,
+			NUMBER: 10,
+		};
 	}
 }
 

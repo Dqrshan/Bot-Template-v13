@@ -1,17 +1,19 @@
 const Discord = require("discord.js"),
 	fs = require("fs"),
-	config = require("../config.json"),
+	config = require("../config"),
 	Event = require("./Event");
+
 class Bot extends Discord.Client {
 	constructor() {
 		super({ intents: 32767 });
 
 		this.commands = new Discord.Collection();
+		this.interactions = new Discord.Collection();
 		this.aliases = new Discord.Collection();
 		this.config = config;
 	}
 	start(token) {
-		if (!token) return console.error(`[ERROR]: You must give the token`);
+		if (!token) return console.error(`[ERROR]: Invalid/No Token Provided`);
 		this.initCommands();
 		this.initEvents();
 		this.login(token);
@@ -25,13 +27,9 @@ class Bot extends Discord.Client {
 			const commandsFiles = fs.readdirSync(`./src/commands/${category}`);
 			for (const commandFile of commandsFiles) {
 				const command = require(`../commands/${category}/${commandFile}`);
-				if (this.commands.has(command.name))
-					return console.warn(
-						`[ERROR]: The command name ${command.name} has already been loaded`
-					);
-				this.commands.set(command.name, command);
-				if (command.aliases && command.aliases.length > 0) {
-					command.aliases.forEach((alias) => this.aliases.set(alias, command));
+
+				if (command.run && typeof command.run === "function") {
+					this.commands.set(command.name, command);
 				}
 				counter++;
 			}
@@ -57,6 +55,49 @@ class Bot extends Discord.Client {
 			}
 		}
 		console.log(`[events]: ${counter}`);
+	}
+
+	async initInteractions() {
+		let counter = 0;
+		const subFolder = fs.readdirSync("./src/commands");
+		for (const category of subFolder) {
+			const commandsFiles = fs.readdirSync(`./src/commands/${category}`);
+			for (const commandFile of commandsFiles) {
+				const command = require(`../commands/${category}/${commandFile}`);
+
+				if (command.exec && typeof command.exec === "function") {
+					this.interactions.set(command.name, command);
+				}
+				counter++;
+			}
+		}
+		console.log(`[commands]: ${counter}`);
+	}
+
+	async register(guild) {
+		const commands = this.interactions.map((cmd) => this.build(cmd));
+		if (guild) {
+			this.application?.commands
+				.set(
+					commands,
+					guild instanceof Discord.Guild
+						? guild.id
+						: guild instanceof String
+						? guild
+						: null
+				)
+				.catch((e) => console.error(e));
+		} else {
+			this.application?.commands.set(commands).catch((e) => console.error(e));
+		}
+	}
+
+	async build(command) {
+		return {
+			name: command.name,
+			description: command.description,
+			options: command.slashOptions,
+		};
 	}
 }
 

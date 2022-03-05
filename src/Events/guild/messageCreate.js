@@ -28,7 +28,7 @@ module.exports = new Event("messageCreate", async (client, message) => {
 			}
 		}
 		/* Executing command */
-		await command.execute(client, message, args);
+		await command.run(client, message, args);
 	} catch (error) {
 		message.channel.send(`An error occurred: \`${error}\``);
 		console.log(error);

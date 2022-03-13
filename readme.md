@@ -7,7 +7,21 @@
 - This repository is customised as per my use.
 - A great thanks to the owner of repository because this is a wonderful template using **classes**!
 - I've modified the whole source to make it compatible with intellisense (auto complete - see below).
-- Rename `.env.example` to `.env` and fill your bot's token.
+- If you don't want slash commands, 
+  - Remove the following line in [`src/Events/client/ready.js`](https://github.com/Dqrshan/bot-template-discord.js-v13/blob/main/src/Events/client/ready.js): 
+  ```js
+  await client.initInteractions(client.guilds.cache.get(client.config.guild));
+  ```
+
+## 📝 Instructions
+- Rename [`.env.example`](https://github.com/Dqrshan/bot-template-discord.js-v13/blob/main/.env.example) to `.env` and fill in your bot's token.
+```shell
+token=AbCdEfGhIj.kLmNoPqRsTuVwXyZ.1234
+```
+- Fill in more details in [`src/config.js`](https://github.com/Dqrshan/bot-template-discord.js-v13/blob/main/src/config.js).
+  - **prefix**: Main Prefix for the Bot.
+  - **token**: Don't change if already entered in `.env`.
+  - **guild**: The guild where slash commands are to be registered.
 
 ## 💫 Features
 

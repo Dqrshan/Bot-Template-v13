@@ -45,6 +45,7 @@ class Command {
 		this.slashOptions = options.slashOptions;
 
 		this.run = options.run;
+		this.exec = options.exec;
 	}
 
 	static get types() {

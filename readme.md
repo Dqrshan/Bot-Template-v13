@@ -22,13 +22,13 @@
 ## 📸 Screenshots (Intellisense)
 
 **Application Command Options**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949527267858604052/Code_tp6VKew6dC.png">
+<img src="https://media.discordapp.net/attachments/926313179326332940/949527267858604052/Code_tp6VKew6dC.png" height="100px" width="300px">
 
 **Command Permissions**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949530026649456660/Code_T5gSL3ELqK.png">
+<img src="https://media.discordapp.net/attachments/926313179326332940/949530026649456660/Code_T5gSL3ELqK.png" height="100px" width="300px">
 
 **Client Events**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949530281113681950/Code_UOewk7apQv.png">
+<img src="https://media.discordapp.net/attachments/926313179326332940/949530281113681950/Code_UOewk7apQv.png" height="100px" width="300px">
 
 ## 📈 Contribution
 

@@ -19,7 +19,7 @@ module.exports = new Event("messageCreate", async (client, message) => {
 		if (command.permissions && Array.isArray(command.permissions)) {
 			if (
 				!message.member.permissions.has(command.permissions) &&
-				!message.channel.permissionsFor(message.author.id).has(perm)
+				!message.channel.permissionsFor(message.author.id).has(command.permissions)
 			) {
 				message.reply(
 					`Missing \`${command.permissions.join(", ")}\` Permission`

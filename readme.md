@@ -22,13 +22,13 @@
 ## 📸 Screenshots (Intellisense)
 
 **Application Command Options**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949527267858604052/Code_tp6VKew6dC.png" height="100px" width="300px">
+<img src="https://media.discordapp.net/attachments/926313179326332940/949527267858604052/Code_tp6VKew6dC.png" height="540x" width="960px">
 
 **Command Permissions**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949530026649456660/Code_T5gSL3ELqK.png" height="100px" width="300px">
+<img src="https://media.discordapp.net/attachments/926313179326332940/949530026649456660/Code_T5gSL3ELqK.png" height="540x" width="960px">
 
 **Client Events**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949530281113681950/Code_UOewk7apQv.png" height="100px" width="300px">
+<img src="https://media.discordapp.net/attachments/926313179326332940/949530281113681950/Code_UOewk7apQv.png" height="540x" width="960px">
 
 ## 📈 Contribution
 
@@ -38,7 +38,7 @@ I may or may not have made a few errors but feel free to **fork** this repositor
 
 <table>
   <tr>
-    <td align="center"><a href="https://discord.com/users/838620835282812969"><img src="https://cdn.discordapp.com/avatars/838620835282812969/c0b6981060e40b82fcacf52f9c16c049.png" width="100px">
+    <td align="center"><a href="https://discord.com/users/838620835282812969"><img src="https://media.discordapp.net/attachments/926313179326332940/952484622745354240/245200298_4491192070947485_329361950020987053_n.jpg?width=530&height=663" width="100px">
     <br />
       <sub>
         <b>Lorenz#1337</b>

@@ -92,12 +92,12 @@ class Bot extends Discord.Client {
 		}
 	}
 
-	async build(command) {
+	build(command) {
 		return {
 			name: command.name,
 			description: command.description,
-			options: command.slashOptions,
 			defaultPermissions: true,
+			options: command.slashOptions ?? [],
 		};
 	}
 }

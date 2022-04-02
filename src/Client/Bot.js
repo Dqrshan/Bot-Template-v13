@@ -11,7 +11,6 @@ class Bot extends Discord.Client {
 
         this.commands = new Discord.Collection()
         this.interactions = new Discord.Collection()
-        this.aliases = new Discord.Collection()
         this.config = config
     }
     start(token) {
@@ -21,7 +20,6 @@ class Bot extends Discord.Client {
         this.initEvents()
         this.login(token)
     }
-    d
 
     initCommands() {
         let counter = 0
@@ -90,12 +88,12 @@ class Bot extends Discord.Client {
         }
     }
 
-    async build(command) {
+    build(command) {
         return {
             name: command.name,
             description: command.description,
-            options: command.slashOptions,
             defaultPermissions: true,
+            options: command.slashOptions ?? [],
         }
     }
 }

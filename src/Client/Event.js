@@ -1,7 +1,7 @@
 /** @format */
 
-const Discord = require("discord.js");
-const Bot = require("./Bot.js");
+const Discord = require('discord.js')
+const Bot = require('./Bot.js')
 
 /**
  * @template {keyof Discord.ClientEvents} K
@@ -14,14 +14,14 @@ function RunFunction(client, ...eventArgs) {}
  * @template {keyof Discord.ClientEvents} K
  */
 class Event {
-	/**
-	 * @param {K} event
-	 * @param {RunFunction<K>} runFunction
-	 */
-	constructor(event, runFunction) {
-		this.event = event;
-		this.run = runFunction;
-	}
+    /**
+     * @param {K} event
+     * @param {RunFunction<K>} runFunction
+     */
+    constructor(event, runFunction) {
+        this.event = event
+        this.run = runFunction
+    }
 }
 
-module.exports = Event;
+module.exports = Event

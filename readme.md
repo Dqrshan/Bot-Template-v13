@@ -58,17 +58,6 @@ token=AbCdEfGhIj.kLmNoPqRsTuVwXyZ.1234
 -   Advanced registration of commands (both slash & message)
 -   Advanced execution of commands (both slash & message)
 
-## 📸 Screenshots (Intellisense)
-
-**Application Command Options**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949527267858604052/Code_tp6VKew6dC.png" height="270x" width="480px">
-
-**Command Permissions**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949530026649456660/Code_T5gSL3ELqK.png" height="270x" width="480px">
-
-**Client Events**
-<img src="https://media.discordapp.net/attachments/926313179326332940/949530281113681950/Code_UOewk7apQv.png" height="270x" width="480px">
-
 ## 📈 Contribution
 
 I may or may not have made a few errors but feel free to **fork** this repository and create a [pull request](https://github.com/Dqrshan/bot-template-discord.js-v13/pulls)
@@ -77,7 +66,7 @@ I may or may not have made a few errors but feel free to **fork** this repositor
 
 <table>
   <tr>
-    <td align="center"><a href="https://discord.com/users/838620835282812969"><img src="https://media.discordapp.net/attachments/926313179326332940/952484622745354240/245200298_4491192070947485_329361950020987053_n.jpg?width=530&height=663" width="100px">
+    <td align="center"><a href="https://discord.com/users/838620835282812969"><img src="https://media.discordapp.net/attachments/855069622306996255/1002811623297265764/static_img_7.jpg" width="100px">
     <br />
       <sub>
         <b>Lorenz#1337</b>

@@ -16,7 +16,8 @@
         "discord.js",
         "bot",
         "framework",
-        "template"
+        "template",
+        "v14"
     ],
     "author": "Lorenz#1337",
     "license": "ISC",

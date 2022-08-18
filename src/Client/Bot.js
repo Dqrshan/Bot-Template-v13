@@ -1,4 +1,3 @@
-const { ApplicationCommandType } = require('discord.js')
 const Discord = require('discord.js'),
     fs = require('fs'),
     config = require('../config'),
@@ -102,7 +101,7 @@ class Bot extends Discord.Client {
             description: command.description,
             defaultPermissions: true,
             options: command.slashOptions ?? [],
-            type: ApplicationCommandType.ChatInput,
+            type: Discord.ApplicationCommandType.ChatInput,
         }
     }
 }

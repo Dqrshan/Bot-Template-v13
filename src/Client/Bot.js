@@ -1,3 +1,4 @@
+const { ApplicationCommandType } = require('discord.js')
 const Discord = require('discord.js'),
     fs = require('fs'),
     config = require('../config'),
@@ -7,7 +8,14 @@ const Discord = require('discord.js'),
 
 class Bot extends Discord.Client {
     constructor() {
-        super({ intents: 32767 })
+        super({
+            intents: [
+                Discord.GatewayIntentBits.Guilds,
+                Discord.GatewayIntentBits.GuildMembers,
+                Discord.GatewayIntentBits.GuildMembers,
+            ],
+            partials: [Discord.Partials.Channel, Discord.Partials.GuildMember, Discord.Partials.Message],
+        })
 
         this.commands = new Discord.Collection()
         this.interactions = new Discord.Collection()
@@ -94,6 +102,7 @@ class Bot extends Discord.Client {
             description: command.description,
             defaultPermissions: true,
             options: command.slashOptions ?? [],
+            type: ApplicationCommandType.ChatInput,
         }
     }
 }

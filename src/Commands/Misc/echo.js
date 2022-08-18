@@ -1,3 +1,4 @@
+const { ApplicationCommandOptionType } = require('discord.js')
 const Command = require('../../Client/Command')
 
 module.exports = new Command({
@@ -7,7 +8,7 @@ module.exports = new Command({
         {
             name: 'message',
             description: 'The message to echo',
-            type: Command.types.STRING,
+            type: ApplicationCommandOptionType.String,
             required: true,
         },
     ],

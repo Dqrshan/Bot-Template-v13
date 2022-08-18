@@ -1,6 +1,14 @@
-<h1 align="center">🎉 Discord Bot Template | djs v13 🎉</h1>
+<h1 align="center">🎉 Discord Bot Template | djs v14 🎉</h1>
 
 > Forked from [Hjuiihu/bot-template-discord.js-v13](https://github.com/Hjuiihu/bot-template-discord.js-v13)
+
+## ✨ What's New?
+
+-   Updated discord.js v13 -> v14
+-   Updated the code based on the changes
+-   More information: [discordjs.guide](https://discordjs.guide/additional-info/changes-in-v14.html)
+
+> v13 repo : [Bot-Template-v13](https://github.com/Dqrshan/Bot-Template-v14)
 
 ## 📒 Description
 

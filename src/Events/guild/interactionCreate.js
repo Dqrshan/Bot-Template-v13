@@ -1,7 +1,8 @@
+const { InteractionType } = require('discord.js')
 const Event = require('../../Client/Event')
 
 module.exports = new Event('interactionCreate', async (client, interaction) => {
-    if (interaction.isCommand()) {
+    if (interaction.type === InteractionType.ApplicationCommand) {
         const command = client.interactions.get(interaction.commandName)
         if (!command) return
 

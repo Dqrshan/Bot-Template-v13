@@ -2,6 +2,8 @@
 
 > Forked from [Hjuiihu/bot-template-discord.js-v13](https://github.com/Hjuiihu/bot-template-discord.js-v13)
 
+---
+
 ## 📒 Description
 
 -   This repository is customised as per my use.
@@ -12,6 +14,8 @@
     ```js
     await client.initInteractions(client.guilds.cache.get(client.config.guild))
     ```
+    
+---
 
 ## 📝 Prerequisites
 
@@ -35,6 +39,8 @@ npm install discord.js @discordjs/rest discord-api-types dotenv
 npm install nodemon prettier --save-dev
 ```
 
+---
+
 ## 📝 Instructions
 
 -   Rename [`.env.example`](https://github.com/Dqrshan/bot-template-discord.js-v13/blob/main/.env.example) to `.env` and fill in your bot's token.
@@ -48,6 +54,8 @@ token=AbCdEfGhIj.kLmNoPqRsTuVwXyZ.1234
     -   **token**: Don't change if already entered in `.env`.
     -   **guild**: The guild where slash commands are to be registered.
 
+---
+
 ## 💫 Features
 
 -   Supports **Message** & **Slash Commands**
@@ -58,15 +66,25 @@ token=AbCdEfGhIj.kLmNoPqRsTuVwXyZ.1234
 -   Advanced registration of commands (both slash & message)
 -   Advanced execution of commands (both slash & message)
 
+---
+
 ## 📈 Contribution
 
 I may or may not have made a few errors but feel free to **fork** this repository and create a [pull request](https://github.com/Dqrshan/bot-template-discord.js-v13/pulls)
+
+---
 
 ## 📞 Contact Me
 
 <table>
   <tr>
-    <td align="center"><a href="https://discord.com/users/838620835282812969"><img src="https://media.discordapp.net/attachments/855069622306996255/1002811623297265764/static_img_7.jpg" width="100px">
+    <td align="center"><a href="https://instagram.com/bruh.darshan"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="bruh.darshan" width="100px">
+    <br />
+      <sub>
+        <b>@bruh.darshan</b>
+      </sub>
+    </a>
+    <td align="center"><a href="https://discord.com/users/838620835282812969"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Lorenz#1337" width="100px">
     <br />
       <sub>
         <b>Lorenz#1337</b>
